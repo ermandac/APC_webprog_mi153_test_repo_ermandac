@@ -1,1 +1,2 @@
 Hello, thi is the repository of Edward Mandac
+This is a new line
