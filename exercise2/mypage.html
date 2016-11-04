@@ -1,73 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	
 	<head>
 	<title>My Website</title>
-	<style>
-	body{
-	max-width: 100%;
-	overflow-x: hidden;
-	}
-	.header {
-	background-color: rgba(90,98,38,0.93);
-	padding: 35px;
-	position: relative;
-	width: 100%;
-	}
-	.menu ul{
-	padding: 0;
-	margin: 0;
-	display: inline-block;
-	}
-	.menu ul li{
-	list-style: none;
-	display: inline;
-	color: white;
-	padding: 0 10px;
-	}
-	.banner{
-	top: 35px;
-	text-align: center;
-	}
-	.center {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    font-size: 72px;
-	font-color: grey;
-}
-	</style>
+	<link href="mywebpage.css" type="text/css" rel="stylesheet" />
 	
 	</head>
-	
-		<body style="margin:0;">
+			
 		
-		<div class="header">
-			<div class="menu">
-				<ul>
-					<li>Home</li>
-					<li>About</li>
-					<li>Contact</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="banner">
-			<img src="headerimage.jpg" style="width:1400px ;height:600px;">.
-				<div class="center"> Welcome To My Website </div>
-		</div>
-		
-		<p align="center" font color=#bfbfbf>Name: Edward Mandac<br>Age: 19<br>Gender: Male<br><br><br>Greetings fellow programmer. Welcome to my webpage. Feel free to look around.</p>
-		
-		<p align="center" font color=#bfbfbf>My Favorite Websites:</p>
-		
-		<ul>
-		<li><a href="http://www.youtube.com">Youtube</a></li>
-		<li><a href="http://www.4chan.org">4Chan</a></li>
-		<li><a href="http://www.9gag.com">9gag</a></li>
-		</ul>
-		
-		</body>
+		<div id="nav">
+        <div id="nav_wrapper">
+                 <ul>
+                    <li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+                </ul>
+        </div>
+    </div>
+	<div id="body">
+	    <table align="center">
+    <tr>
+    <th colspan="5"><a href="add_data.php">add data here.</a></th>
+    </tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>City Name</th>
+    <th colspan="2">Operations</th>
+    </tr>
+    <?php
+ $sql_query="SELECT * FROM users";
+ $result_set=mysqli_query($con, $sql_query);
+ while($row=mysqli_fetch_row($result_set))
+ {
+  ?>
+        <tr>
+        <td><?php echo $row[1]; ?></td>
+        <td><?php echo $row[2]; ?></td>
+        <td><?php echo $row[3]; ?></td>
+  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
+        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
+        </tr>
+        <?php
+ }
+ ?>
+    </table>
+	</div>
 </html>
