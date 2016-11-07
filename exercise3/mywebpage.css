@@ -7,7 +7,7 @@ body{
 }
 
 #nav{
-  background-color:#222;
+  background-color:#42b9f4;
   position: fixed;
   width: 100%;
   top: 0;
@@ -128,7 +128,7 @@ table a
 table,td,th
 {
  border-collapse:collapse;
- border:solid #d0d0d0 1px;
+ border:solid #0000 10px;
  padding:20px;
 }
 table td input
