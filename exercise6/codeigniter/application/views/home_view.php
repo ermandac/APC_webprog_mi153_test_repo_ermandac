@@ -30,7 +30,7 @@ if(isset($_GET['delete_id']))
 	{
 		if(confirm('Sure to edit ?'))
 		{
-			window.location.href='edit_data.php?edit_id='+id;
+			window.location.href='controllers/Edit_data.php?edit_id'+id;
 		}
 	}
 		
@@ -38,7 +38,7 @@ if(isset($_GET['delete_id']))
 	{
 		if(confirm('Sure to Delete ?'))
 		{
-			window.location.href='index.php?delete_id='+id;
+			window.location.href='Home.php?delete_id='+id;
 		}
 	}
 	</script>
