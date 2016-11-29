@@ -50,8 +50,10 @@ if(isset($_POST['btn-save']))
     <tr>
     <td><input type="text" name="city_name" placeholder="City" required /></td>
     </tr>
+	<tr>
 	<td><input type="text" name="contact_no" placeholder="Contact Number" required /></td>
     </tr>
+	<tr>
 	<td><input type="text" name="email" placeholder="Email" required /></td>
     </tr>
     <tr>
