@@ -2,7 +2,7 @@
 include_once 'dbconfig.php';
 if(isset($_GET['edit_id']))
 {
- $sql_query="SELECT * FROM users WHERE user_id=".$_GET['edit_id'];
+ $sql_query="SELECT * FROM users WHERE user_id=".$_GET['edt_id'];
  $result_set=mysqli_query($con, $sql_query);
  $fetched_row=mysqli_fetch_array($result_set);
 }
@@ -17,7 +17,7 @@ if(isset($_POST['btn-update']))
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name',contact_no='$contact_no',email='$email' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',city_name='$city_name',contact_no='$contact_no',email='$email' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -72,7 +72,7 @@ if(isset($_POST['btn-cancel']))
     <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
+    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['city_name']; ?>" required /></td>
     </tr>
 	<tr>
 	<td><input type="text" name="contact_no" placeholder="Contact Number" value="<?php echo $fetched_row['contact_no']; ?>" required /></td>
