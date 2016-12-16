@@ -6,14 +6,14 @@ if(isset($_POST['btn-save']))
  // variables for input data
  $first_name = $_POST['first_name'];
  $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
+ $user_city = $_POST['user_city'];
  $contact_no = $_POST['contact_no'];
  $email = $_POST['email'];
  // variables for input data
  
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(first_name,last_name,city_name,contact_no,email) VALUES('$first_name','$last_name','$city_name','$contact_no','$email')";
+        $sql_query = "INSERT INTO users(first_name,last_name,user_city,contact_no,email) VALUES('$first_name','$last_name','$user_city','$contact_no','$email')";
  mysqli_query($con, $sql_query);
         
         // sql query for inserting data into database
