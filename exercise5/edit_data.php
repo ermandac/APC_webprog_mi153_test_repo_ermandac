@@ -11,13 +11,13 @@ if(isset($_POST['btn-update']))
  // variables for input data
  $first_name = $_POST['first_name'];
  $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
+ $user_city = $_POST['user_city'];
  $contact_no = $_POST['contact_no'];
  $email = $_POST['email'];
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name',contact_no='$contact_no',email='$email' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$user_city',contact_no='$contact_no',email='$email' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -72,7 +72,7 @@ if(isset($_POST['btn-cancel']))
     <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['city_name']; ?>" required /></td>
+    <td><input type="text" name="user_city" placeholder="City" value="<?php echo $fetched_row['city_name']; ?>" required /></td>
     </tr>
 	<tr>
     <td><input type="text" name="contact_no" placeholder="Contact No" value="<?php echo $fetched_row['contact_no']; ?>" required /></td>
