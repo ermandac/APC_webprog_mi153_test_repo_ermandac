@@ -3,7 +3,7 @@ include_once 'dbconfig.php';
 if(isset($_GET['edit_id']))
 {
  $sql_query="SELECT * FROM users WHERE user_id=".$_GET['edit_id'];
- $result_set=mysqli_query($sql_query);
+ $result_set=mysqli_query($con, $sql_query);
  $fetched_row=mysqli_fetch_array($result_set);
 }
 if(isset($_POST['btn-update']))
@@ -21,7 +21,7 @@ if(isset($_POST['btn-update']))
  // sql query for update data into database
  
  // sql query execution function
- if(mysqli_query($sql_query))
+ if(mysqli_query($con, $sql_query))
  {
   ?>
   <script type="text/javascript">
@@ -67,18 +67,6 @@ if(isset($_POST['btn-cancel']))
     <table align="center">
     <tr>
     <td><input type="text" name="first_name" placeholder="First Name" value="<?php echo $fetched_row['first_name']; ?>" required /></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="user_city" placeholder="City" value="<?php echo $fetched_row['city_name']; ?>" required /></td>
-    </tr>
-	<tr>
-    <td><input type="text" name="contact_no" placeholder="Contact No" value="<?php echo $fetched_row['contact_no']; ?>" required /></td>
-    </tr>
-	<tr>
-    <td><input type="text" name="email" placeholder="Email" value="<?php echo $fetched_row['email']; ?>" required /></td>
     </tr>
     <tr>
     <td>
