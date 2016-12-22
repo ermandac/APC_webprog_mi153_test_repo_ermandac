@@ -30,7 +30,7 @@ if(isset($_GET['delete_id']))
             return "Are you sure you want to leave?"; 
 		}
     }
-	function edt_id(id)
+	function edit_id(id)
 	{
 		if(confirm('Sure to edit ?'))
 		{
@@ -70,7 +70,7 @@ if(isset($_GET['delete_id']))
 				<th colspan="2">Operations</th>
 			</tr>
 		<?php
-			$sql_query="SELECT * FROM users";
+			$sql_query="SELECT * FROM guestform";
 			$result_set=mysqli_query($con, $sql_query);
 			while($row=mysqli_fetch_row($result_set))
 				{
@@ -81,7 +81,8 @@ if(isset($_GET['delete_id']))
 				<td><?php echo $row[3]; ?></td>
 				<td><?php echo $row[4]; ?></td>
 				<td><?php echo $row[5]; ?></td>
-				<td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="edit.png" align="EDIT" /></a></td>
+				<td><?php echo $row[6]; ?></td>
+				<td align="center"><a href="javascript:edit_id('<?php echo $row[0]; ?>')"><img src="edit.png" align="EDIT" /></a></td>
 				<td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="delete.png" align="DELETE" /></a></td>
 			 </tr>
         <?php
